@@ -1,0 +1,20 @@
+/* css/style.css */
+
+/* Definiamo i nostri colori come variabili per poterli cambiare facilmente in un unico posto */
+:root {
+    --colore-sfondo: #FFFFFF;
+    --colore-testo: #111111;
+    --colore-accento: #007bff; /* Un blu tenue, come da piano */
+}
+
+body {
+    background-color: var(--colore-sfondo);
+    color: var(--colore-testo);
+    font-family: sans-serif; /* Per ora usiamo un font di sistema */
+    line-height: 1.6;
+}
+
+/* Stile di prova per vedere se il CSS è collegato */
+h1 {
+    color: var(--colore-accento);
+}
