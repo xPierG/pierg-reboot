@@ -1,0 +1,23 @@
+{
+  "name": "pierg-reboot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xPierG/pierg-reboot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xPierG/pierg-reboot/issues"
+  },
+  "homepage": "https://github.com/xPierG/pierg-reboot#readme",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.1"
+  }
+}
