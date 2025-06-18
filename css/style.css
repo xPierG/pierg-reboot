@@ -1,20 +1,46 @@
 /* css/style.css */
 
-/* Definiamo i nostri colori come variabili per poterli cambiare facilmente in un unico posto */
+/* 1. Definizione dei font locali */
+/* Inter Regular */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-v13-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-v13-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+/* JetBrains Mono Regular */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono-v19-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 2. Variabili e stili globali */
 :root {
     --colore-sfondo: #FFFFFF;
     --colore-testo: #111111;
-    --colore-accento: #007bff; /* Un blu tenue, come da piano */
+    --colore-accento: #007bff;
+    --font-principale: 'Inter', sans-serif;
+    --font-titoli: 'JetBrains Mono', monospace;
 }
 
 body {
     background-color: var(--colore-sfondo);
     color: var(--colore-testo);
-    font-family: sans-serif; /* Per ora usiamo un font di sistema */
+    font-family: var(--font-principale);
     line-height: 1.6;
 }
 
-/* Stile di prova per vedere se il CSS è collegato */
-h1 {
+/* 3. Applicazione dei font */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titoli);
     color: var(--colore-accento);
 }
