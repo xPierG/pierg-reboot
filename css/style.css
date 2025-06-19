@@ -1,46 +1,141 @@
-/* css/style.css */
+/* ==========================================================================
+   File CSS Completo per pierg.com
+   ========================================================================== */
 
-/* 1. Definizione dei font locali */
-/* Inter Regular */
+/* --- Definizione dei Font Locali --- */
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/inter-v13-latin-regular.woff2') format('woff2');
-  font-weight: 400;
+  src: url('/fonts/inter-v13-latin-300.woff2') format('woff2');
+  font-weight: 300; /* Light */
   font-style: normal;
 }
-/* Inter Bold */
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/inter-v13-latin-700.woff2') format('woff2');
-  font-weight: 700;
+  src: url('/fonts/inter-v13-latin-600.woff2') format('woff2');
+  font-weight: 600; /* Semi-Bold */
   font-style: normal;
 }
-/* JetBrains Mono Regular */
 @font-face {
   font-family: 'JetBrains Mono';
   src: url('/fonts/jetbrains-mono-v19-latin-regular.woff2') format('woff2');
-  font-weight: 400;
+  font-weight: 400; /* Regular */
   font-style: normal;
 }
 
-/* 2. Variabili e stili globali */
-:root {
-    --colore-sfondo: #FFFFFF;
-    --colore-testo: #111111;
-    --colore-accento: #007bff;
-    --font-principale: 'Inter', sans-serif;
-    --font-titoli: 'JetBrains Mono', monospace;
+/* --- Stili Strutturali Globali (quelli che ho rotto prima) --- */
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    background-color: #fff;
+    color: #111;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-body {
-    background-color: var(--colore-sfondo);
-    color: var(--colore-testo);
-    font-family: var(--font-principale);
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+header nav a, footer a {
+    margin-left: 1rem;
+    color: #111;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+header nav a:hover, footer a:hover {
+    color: #007bff;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Stili per le Pagine di Testo (About, Blog, etc.) --- */
+.layout-post main, .layout-default main {
+    display: block;
+    max-width: 65ch;
+    margin: 2rem auto;
+    padding: 0 2rem;
     line-height: 1.6;
 }
 
-/* 3. Applicazione dei font */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-titoli);
-    color: var(--colore-accento);
+.layout-default h1, .layout-post h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   Stili Specifici V-Card Homepage
+   ========================================================================== */
+
+.v-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    object-fit: cover;
+    margin-bottom: 1.5rem; /* Spazio tra foto e nome */
+}
+
+.v-card h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Stile per il tagline */
+.v-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.75rem; /* Spazio tra nome e tagline */
+    margin-bottom: 0;
+    line-height: 1.25; /* <-- MOLTO RIDOTTO, per avvicinare le righe */
+}
+
+.v-card p strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600; /* Usiamo il peso semi-bold che hai scelto */
+  color: #333;
+}
+
+/* Stile per le icone social */
+.social-icons {
+    display: flex;
+    gap: 1.25rem; /* Spazio controllato solo TRA le icone */
+    margin-top: 1.75rem; /* <-- AUMENTATO, per dare più spazio SOTTO il tagline */
+}
+
+.social-icons a {
+    display: inline-block;
+    color: #888;
+    transition: color 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #111;
+}
+
+.social-icons svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
 }

@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
   // Ci servirà nella prossima fase.
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("fonts"); 
+  eleventyConfig.addPassthroughCopy("img");
   return {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
