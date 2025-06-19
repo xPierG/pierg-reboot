@@ -35,6 +35,9 @@ jobs:
         # Usiamo npx per essere sicuri di eseguire il comando di Eleventy
         run: npx @11ty/eleventy
 
+      - name: List Build Output Contents
+        run: ls -la _site/
+
       - name: Upload artifact
         # Carica la cartella _site generata per il lavoro di deploy
         uses: actions/upload-pages-artifact@v3
@@ -52,5 +55,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: List Build Output Contents
-        run: ls -la _site/
