@@ -1,0 +1,48 @@
+# File: admin/config.yml
+
+backend:
+  name: github
+  repo: xPierG/pierg-reboot # Confermato dal tuo package.json
+  branch: main
+
+# Ho modificato media_folder per usare la tua cartella img esistente. È più pulito.
+media_folder: "src/img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "src/posts" # <-- Percorso corretto
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" } # Usa il nome del tuo layout per i post
+      - { label: "Tags", name: "tags", widget: "hidden", default: "post" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/about.md" # <-- Percorso corretto
+        label: "About Page"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default.njk" }
+      - file: "src/privacy-policy.md" # <-- Percorso corretto
+        label: "Privacy Policy"
+        name: "privacy"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default.njk" }
+      - file: "src/contact.md" # <-- Percorso corretto
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default.njk" }

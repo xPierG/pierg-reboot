@@ -1,23 +1,27 @@
-// .eleventy.js
-const { DateTime } = require("luxon");
-
+// File: .eleventy.js
 module.exports = function(eleventyConfig) {
-  // Copia le cartelle statiche (css, fonts, img)
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("fonts");
-  eleventyConfig.addPassthroughCopy("img");
-
-  // Aggiunge il filtro "date" per formattare le date
+  
+  const { DateTime } = require("luxon");
   eleventyConfig.addFilter("date", (dateObj, format) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(format);
   });
 
+  // Passthrough Copy: Copia le cartelle nella build finale (_site).
+  // I percorsi sono relativi alla root del progetto.
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/fonts");
+  eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("admin");
+
+  // Dizgli a Eleventy di usare la cartella `src` come input.
   return {
-    markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
     dir: {
-      input: ".",
+      input: "src",
       output: "_site",
+      includes: "_includes", // La cartella _includes è dentro src
+      layouts: "_includes"  // Specifichiamo per sicurezza
     },
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk"
   };
 };
