@@ -9,27 +9,31 @@ A complete, modern, and minimalist redesign of the personal website pierg.com, b
 * **Static Site Generator:** [Eleventy (11ty)](https://www.11ty.dev/)
 * **Template Language:** [Nunjucks](https://mozilla.github.io/nunjucks/)
 * **Styling:** Plain CSS with Flexbox
-* **CMS:** [Decap CMS](https://decapcms.org/) (for content management)
+* **CMS:** [Decap CMS](https://decapcms.org/)
 * **Forms:** [Formspree](https://formspree.io/)
 * **Hosting & Deployment:** [GitHub Pages](https://pages.github.com/) via [GitHub Actions](https://github.com/features/actions)
 
-### Deployment Strategy
+### Deployment
 
-The live site `pierg.com` is served from the `master` branch of the `xPierG.github.io` repository. The deployment is fully automated via a GitHub Action defined in `.github/workflows/deploy.yml`.
+This site is automatically deployed to `pierg.com` on every push to the `master` branch. The deployment process is handled by the GitHub Action defined in `.github/workflows/deploy.yml`.
+
+To trigger a new deployment, simply push your commits:
+
+    git push origin master
 
 ### How to Run Locally
 
 1.  Clone the repository.
 2.  Install dependencies:
-    ```bash
+    ```
     npm install
     ```
 3.  Start the local development server:
-    ```bash
+    ```
     npm start
     ```
     The site will be available at `http://localhost:8080`.
 
 ### CMS Access
 
-The content management interface is available at `/admin/` on the deployed website. Access requires authentication via GitHub.
+The content management interface is available at `https://pierg.com/admin/`. Access requires authentication via GitHub.

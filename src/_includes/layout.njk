@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
     </head>
 <body class="layout-{{ layout }}">
+<body class="{{ bodyClass | default('layout-default') }}">
     <header>
         <a href="/" class="logo">pierg.com</a>
         <nav>

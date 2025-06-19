@@ -3,7 +3,7 @@ title: "Home"
 layout: "v-card" # Usiamo un nome di layout personalizzato
 ---
 <div class="v-card">
-    <img src="/img/profilo.jpg" alt="Una foto di Pierg" class="profile-picture">
+    <img src="{{ '/img/profilo.jpg' | url }}" alt="Una foto di Pierg" class="profile-picture">
     <h1>PierG</h1>
     <p>My first copilot was a printed manual:<br><strong>building what's next</strong></p>
     <div class="social-icons">
