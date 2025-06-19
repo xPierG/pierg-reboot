@@ -1,0 +1,54 @@
+# File: .github/workflows/deploy.yml
+
+name: Build and Deploy to GitHub Pages
+
+on:
+  # Esegui questa action ogni volta che fai un push sul branch 'master'
+  push:
+    branches:
+      - master
+
+# Imposta i permessi necessari per permettere all'action di scrivere su GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # Lavoro di "build": costruisce il sito
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Eleventy richiede una versione recente di Node.js
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the site
+        # Usiamo npx per essere sicuri di eseguire il comando di Eleventy
+        run: npx @11ty/eleventy
+
+      - name: Upload artifact
+        # Carica la cartella _site generata per il lavoro di deploy
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+  # Lavoro di "deploy": pubblica il sito
+  deploy:
+    needs: build # Esegui solo dopo che il 'build' è completato
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
