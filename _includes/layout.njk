@@ -12,7 +12,7 @@
         <nav>
             <a href="/about/">About</a>
             <a href="/blog/">Blog</a>
-            <a href="/contact/">Contatti</a>
+            <a href="/contact/">Contact</a>
         </nav>
     </header>
 
@@ -22,7 +22,14 @@
 
     <footer>
         <span>&copy; 2025 pierg.com</span>
-        <span></span>
+
+        {# Questo è un blocco condizionale di Nunjucks (il linguaggio di templating di Eleventy) #}
+        {%- if page.url == '/' -%}
+            <span class="photo-credit-footer">
+                <a href="https://silviacasali.it/" target="_blank" rel="noopener noreferrer">PierG pic by Silvia Casali</a>
+            </span>
+        {%- endif -%}
     </footer>
 </body>
 </html>
+

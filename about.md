@@ -2,7 +2,6 @@
 title: "About"
 layout: "default"
 ---
-## Chi sono
 
 At my core, I am a software developer by design. I lead innovation and digital transformation initiatives, building my career at the intersection of strategy, technology, and agile execution.
 

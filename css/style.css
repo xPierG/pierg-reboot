@@ -44,12 +44,23 @@ header, footer {
     font-size: 0.9rem;
 }
 
-header nav a, footer a {
+header nav a {
+    margin-left: 1.5rem;
+    color: #111;
+    text-decoration: none;
+    font-family: var(--font-titoli); /* <-- Usa JetBrains Mono */
+    font-weight: 400; /* Il peso regular di JetBrains è già forte */
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+header footer a {
     margin-left: 1rem;
     color: #111;
     text-decoration: none;
     transition: color 0.2s;
 }
+
 
 header nav a:hover, footer a:hover {
     color: #007bff;
@@ -138,4 +149,149 @@ main {
     width: 24px;
     height: 24px;
     vertical-align: middle;
+}
+
+/* Stile per il credito della foto nel footer */
+.photo-credit-footer a {
+    color: #666; /* Un grigio un po' più scuro del testo normale del footer */
+}
+
+/* ==========================================================================
+   Stili per la Lista dei Post del Blog (Versione Raffinata)
+   ========================================================================== */
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list-item {
+    margin-bottom: 2.5rem; /* Spazio tra un post e l'altro */
+}
+
+.post-list-item a {
+    font-family: var(--font-titoli); /* Usa JetBrains Mono, come gli altri titoli */
+    font-size: 1.5rem;
+    font-weight: 400; /* Peso normale, NON bold */
+    color: var(--colore-testo);
+    text-decoration: none;
+    line-height: 1.3;
+    transition: color 0.2s ease-in-out;
+}
+
+.post-list-item a:hover {
+    color: var(--colore-accento); /* Diventa blu al passaggio del mouse */
+}
+
+.post-list-date {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 0.25rem;
+    font-family: var(--font-principale); /* Usa Inter per la data */
+}
+
+/* ==========================================================================
+   Stili per il Singolo Articolo del Blog
+   ========================================================================== */
+
+.post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.post-title {
+    color: #111; /* Titolo nero, non blu, per distinguerlo dai link */
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.post-content {
+    font-size: 1.1rem; /* Aumentiamo leggermente la leggibilità */
+    line-height: 1.7; /* Diamo più respiro al testo lungo */
+}
+
+/* Spaziatura per gli elementi comuni dentro un post */
+.post-content p, 
+.post-content ul, 
+.post-content ol,
+.post-content blockquote {
+    margin-bottom: 1.5rem;
+}
+
+.post-content a {
+    color: var(--colore-accento);
+}
+
+/* ==========================================================================
+   Stili per il Form di Contatto
+   ========================================================================== */
+
+form {
+    margin-top: 2rem; /* Spazio tra il testo introduttivo e il form */
+}
+
+/* Stile per ogni gruppo (etichetta + campo) */
+form label {
+    display: flex;
+    flex-direction: column; /* Impila il testo dell'etichetta sopra il suo campo */
+    margin-bottom: 1.5rem; /* Spazio tra un campo e l'altro */
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Stile per i campi di testo e l'area di testo */
+form input[type="email"],
+form textarea {
+    width: 100%; /* I campi occupano tutta la larghezza disponibile */
+    padding: 0.75rem;
+    margin-top: 0.5rem; /* Spazio tra il testo dell'etichetta e il campo */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Angoli leggermente smussati */
+    font-family: var(--font-principale); /* Usa il font Inter */
+    font-size: 1rem;
+    background-color: #f8f8f8;
+    box-sizing: border-box; /* Assicura che il padding non aumenti la larghezza */
+}
+
+form textarea {
+    min-height: 150px; /* Altezza minima per l'area di testo */
+    resize: vertical; /* Permette all'utente di ridimensionare solo in altezza */
+}
+
+/* Stile specifico per il gruppo del checkbox, per metterlo in orizzontale */
+form label.checkbox-label {
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+form input[type="checkbox"] {
+    margin-right: 0.75rem; /* Spazio tra la casella e il testo */
+    width: auto; /* Annulla la larghezza del 100% */
+}
+
+/* Stile per il pulsante di invio */
+form button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--colore-accento); /* Usa il nostro blu */
+    color: white;
+    font-family: var(--font-titoli); /* Usa JetBrains Mono */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+form button:hover {
+    background-color: #0056b3; /* Un blu leggermente più scuro */
 }

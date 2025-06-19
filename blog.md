@@ -1,8 +1,16 @@
 ---
 title: "Blog"
-layout: "default" # Usiamo un layout generico per le pagine di testo
+layout: "default"
 ---
-## Blog
-
-Elenco degli articoli...
-*(Qui inseriremo il ciclo for per i post non appena ne avremo)*
+<ul class="post-list">
+{%- for post in collections.post | reverse -%}
+  <li class="post-list-item">
+    <a href="{{ post.url | url }}">
+      {{ post.data.title }}
+    </a>
+    <time class="post-list-date" datetime="{{ post.date | date('yyyy-MM-dd') }}">
+      {{ post.date | date('dd LLLL yyyy') }}
+    </time>
+  </li>
+{%- endfor -%}
+</ul>
