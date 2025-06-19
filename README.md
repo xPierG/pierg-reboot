@@ -11,24 +11,11 @@ A complete, modern, and minimalist redesign of the personal website pierg.com, b
 * **Styling:** Plain CSS with Flexbox
 * **CMS:** [Decap CMS](https://decapcms.org/) (for content management)
 * **Forms:** [Formspree](https://formspree.io/)
-* **Hosting & Deployment:** [GitHub Pages](https://pages.github.com/)
+* **Hosting & Deployment:** [GitHub Pages](https://pages.github.com/) via [GitHub Actions](https://github.com/features/actions)
 
-### Design Principles
+### Deployment Strategy
 
-* Minimalist, content-focused aesthetic.
-* "V-Card" style homepage.
-* Typography-centric design featuring 'Inter' and 'JetBrains Mono'.
-
-### Project Structure
-
-This project follows the standard Eleventy structure, with all source files located in the `/src` directory. The final static site is compiled into the `/_site` directory.
-
-* `src/`: Contains all source files (Markdown pages, Nunjucks layouts, assets).
-* `src/_includes/`: Nunjucks layouts for pages and posts.
-* `src/posts/`: Markdown files for blog posts.
-* `src/assets/`: Static assets like CSS, fonts, and images.
-* `admin/`: Configuration and entry point for Decap CMS.
-* `.eleventy.js`: Eleventy's main configuration file.
+The live site `pierg.com` is served from the `master` branch of the `xPierG.github.io` repository. The deployment is fully automated via a GitHub Action defined in `.github/workflows/deploy.yml`.
 
 ### How to Run Locally
 
@@ -45,4 +32,4 @@ This project follows the standard Eleventy structure, with all source files loca
 
 ### CMS Access
 
-The content management interface is available at `/admin/` on the deployed website. Access requires authentication via GitHub as a repository collaborator.
+The content management interface is available at `/admin/` on the deployed website. Access requires authentication via GitHub.
