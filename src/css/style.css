@@ -200,28 +200,40 @@ main {
 /* ==========================================================================
    Stili per il Singolo Articolo del Blog
    ========================================================================== */
+/* Stile per il pulsante quando è disabilitato */
+form button:disabled {
+    background-color: #ccc; /* Un grigio chiaro per indicare che è disabilitato */
+    color: #666; /* Testo più scuro per contrasto sul grigio chiaro */
+    cursor: not-allowed; /* Cambia il cursore per indicare che non è cliccabile */
+}
 
 .post-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* Ridotto per fare spazio alla data che ora è esterna */
     padding-bottom: 1rem;
     border-bottom: 1px solid #eee;
 }
 
-.post-title {
+/* Modificato per aumentare la specificità e aggiungere font-family */
+.post-header .post-title {
+    font-family: var(--font-titoli); /* Usa JetBrains Mono per i titoli dei post */
     color: #111; /* Titolo nero, non blu, per distinguerlo dai link */
-    font-size: 2.8rem;
+    font-size: 2.4rem; /* Ridotto, leggermente più grande del titolo H1 di default */
+    margin-left: 0; /* Assicura l'allineamento a sinistra con il contenuto */
     margin-bottom: 0.5rem;
-    line-height: 1.2;
+    line-height: 1.2; /* Già presente, corretto */
 }
 
 .post-date {
+    display: block; /* Assicura che la data occupi la sua riga */
     font-size: 0.9rem;
     color: #888;
+    margin-top: 0; /* La spaziatura sopra è gestita dal margin-bottom dell'header */
+    margin-bottom: 1.5rem; /* Spazio tra la data e il contenuto del post */
 }
 
 .post-content {
-    font-size: 1.1rem; /* Aumentiamo leggermente la leggibilità */
-    line-height: 1.7; /* Diamo più respiro al testo lungo */
+    font-size: 1rem; /* Allineato al font-size di base, come per le pagine default */
+    line-height: 1.5; /* Ridotto per un testo leggermente più denso */
 }
 
 /* Spaziatura per gli elementi comuni dentro un post */
@@ -300,4 +312,11 @@ form button {
 
 form button:hover {
     background-color: #0056b3; /* Un blu leggermente più scuro */
+}
+
+/* Stile per il pulsante quando è disabilitato */
+form button:disabled {
+    background-color: #ccc; /* Un grigio chiaro per indicare che è disabilitato */
+    color: #666; /* Testo più scuro per contrasto sul grigio chiaro */
+    cursor: not-allowed; /* Cambia il cursore per indicare che non è cliccabile */
 }

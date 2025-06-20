@@ -4,6 +4,7 @@ layout: "default"
 ---
 
 You can find me on [Linkedin](https://www.linkedin.com/in/pierg) or you can write me here.
+Otherwise, Google me ;)
 
 <form action="https://formspree.io/mnqgvbnn" method="POST">
   <label>
