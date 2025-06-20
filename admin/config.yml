@@ -2,7 +2,7 @@
 
 backend:
   name: github
-  repo: xPierG/pierg-reboot # Confermato dal tuo package.json
+  repo: xPierG/xpierg.github.io # <-- Modifica questo con il nome del repository GitHub Pages
   branch: main
 
 # Ho modificato media_folder per usare la tua cartella img esistente. È più pulito.
