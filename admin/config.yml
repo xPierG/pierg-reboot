@@ -2,8 +2,8 @@
 
 backend:
   name: github
-  repo: xPierG/xPierG.github.io # <-- Modifica questo con il nome del repository GitHub Pages
-  branch: main
+  repo: xPierG/xPierG.github.io
+  branch: master # <-- Modifica questo per farlo corrispondere al branch di deploy
 
 # Ho modificato media_folder per usare la tua cartella img esistente. È più pulito.
 media_folder: "src/img/uploads"
