@@ -17,21 +17,23 @@ A complete, modern, and minimalist redesign of the personal website pierg.com, b
 
 This site is automatically deployed to `pierg.com` on every push to the `master` branch. The deployment process is handled by the GitHub Action defined in `.github/workflows/deploy.yml`.
 
-To trigger a new deployment, simply push your commits:
+To trigger a new deployment, simply commit your changes and push them to the `master` branch:
 
+    git add .
+    git commit -m "Your descriptive commit message"
     git push origin master
 
 ### How to Run Locally
 
 1.  Clone the repository.
 2.  Install dependencies:
-    ```
-    npm install
-    ```
+
+        npm install
+
 3.  Start the local development server:
-    ```
-    npm start
-    ```
+
+        npm start
+
     The site will be available at `http://localhost:8080`.
 
 ### CMS Access

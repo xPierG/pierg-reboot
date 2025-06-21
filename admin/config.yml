@@ -3,7 +3,8 @@
 backend:
   name: github
   repo: xPierG/xPierG.github.io
-  branch: master # <-- Modifica questo per farlo corrispondere al branch di deploy
+  branch: master
+  base_url: https://gatekeeper.decms.io 
 
 # Ho modificato media_folder per usare la tua cartella img esistente. È più pulito.
 media_folder: "src/img/uploads"
