@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <script src="https://unpkg.com/decap-cms@3.1.9/dist/decap-cms.js"></script>
 </head>
 <body>
   <div id="nc-root"></div>
+
+  <script src="https://unpkg.com/decap-cms@3.1.9/dist/decap-cms.js"></script>
+
   <script>
     var config = {
       "backend": {
@@ -15,7 +17,7 @@
         "repo": "xPierG/xPierG.github.io",
         "branch": "master",
         "auth_type": "pkce",
-        "app_id": "Ov23liQGpPFw9jJiiczd" // Ho usato il Client ID che vedo nei tuoi screenshot
+        "app_id": "Ov23liQGpPFw9jJiiczd" 
       },
       "media_folder": "src/img/uploads",
       "public_folder": "/img/uploads",
@@ -42,7 +44,6 @@
       ]
     };
 
-    // LA CORREZIONE È QUI: passiamo l'oggetto 'config' direttamente.
     CMS.init(config);
   </script>
 </body>
