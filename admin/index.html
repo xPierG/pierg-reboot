@@ -4,76 +4,53 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
+  
+  <script src="https://unpkg.com/decap-cms@3.1.9/dist/decap-cms.js"></script>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@3.1.9/dist/decap-cms.js"></script>
+  <div id="nc-root"></div>
 
   <script>
-    var config = {
-      "backend": {
-        "name": "github",
-        "repo": "xPierG/xPierG.github.io",
-        "branch": "master",
-        "auth_type": "pkce",
-        "app_id": "INCOLLA_QUI_IL_TUO_CLIENT_ID" // Assicurati che qui ci sia il tuo Client ID
-      },
-      "media_folder": "src/img/uploads",
-      "public_folder": "/img/uploads",
-      "collections": [
-        {
-          "name": "posts",
-          "label": "Blog Posts",
-          "folder": "src/posts",
-          "create": true,
-          "slug": "{{year}}-{{month}}-{{day}}-{{slug}}",
-          "fields": [
-            { "label": "Title", "name": "title", "widget": "string" },
-            { "label": "Publish Date", "name": "date", "widget": "datetime" },
-            { "label": "Body", "name": "body", "widget": "markdown" },
-            { "label": "Layout", "name": "layout", "widget": "hidden", "default": "post.njk" },
-            { "label": "Tags", "name": "tags", "widget": "hidden", "default": "post" }
-          ]
+    window.addEventListener('DOMContentLoaded', () => {
+      var config = {
+        "backend": {
+          "name": "github",
+          "repo": "xPierG/xPierG.github.io",
+          "branch": "master",
+          "auth_type": "pkce",
+          "app_id": "INCOLLA_QUI_IL_TUO_CLIENT_ID" // Assicurati che qui ci sia il tuo Client ID
         },
-        {
-          "name": "pages",
-          "label": "Pages",
-          "files": [
-            {
-              "file": "src/about.md",
-              "label": "About Page",
-              "name": "about",
-              "fields": [
-                { "label": "Title", "name": "title", "widget": "string" },
-                { "label": "Body", "name": "body", "widget": "markdown" },
-                { "label": "Layout", "name": "layout", "widget": "hidden", "default": "default.njk" }
-              ]
-            },
-            {
-              "file": "src/privacy-policy.md",
-              "label": "Privacy Policy",
-              "name": "privacy",
-              "fields": [
-                { "label": "Title", "name": "title", "widget": "string" },
-                { "label": "Body", "name": "body", "widget": "markdown" },
-                { "label": "Layout", "name": "layout", "widget": "hidden", "default": "default.njk" }
-              ]
-            },
-            {
-              "file": "src/contact.md",
-              "label": "Contact Page",
-              "name": "contact",
-              "fields": [
-                { "label": "Title", "name": "title", "widget": "string" },
-                { "label": "Body", "name": "body", "widget": "markdown" },
-                { "label": "Layout", "name": "layout", "widget": "hidden", "default": "default.njk" }
-              ]
-            }
-          ]
-        }
-      ]
-    };
+        "media_folder": "src/img/uploads",
+        "public_folder": "/img/uploads",
+        "collections": [
+          {
+            "name": "posts",
+            "label": "Blog Posts",
+            "folder": "src/posts",
+            "create": true,
+            "slug": "{{year}}-{{month}}-{{day}}-{{slug}}",
+            "fields": [
+              { "label": "Title", "name": "title", "widget": "string" },
+              { "label": "Publish Date", "name": "date", "widget": "datetime" },
+              { "label": "Body", "name": "body", "widget": "markdown" },
+              { "label": "Layout", "name": "layout", "widget": "hidden", "default": "post.njk" },
+              { "label": "Tags", "name": "tags", "widget": "hidden", "default": "post" }
+            ]
+          },
+          {
+            "name": "pages",
+            "label": "Pages",
+            "files": [
+              { "file": "src/about.md", "label": "About Page", "name": "about", "fields": [ /* ... */ ] },
+              { "file": "src/privacy-policy.md", "label": "Privacy Policy", "name": "privacy", "fields": [ /* ... */ ] },
+              { "file": "src/contact.md", "label": "Contact Page", "name": "contact", "fields": [ /* ... */ ] }
+            ]
+          }
+        ]
+      };
 
-    CMS.init({ config });
+      CMS.init({ config });
+    });
   </script>
 </body>
 </html>
