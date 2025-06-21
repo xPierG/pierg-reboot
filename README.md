@@ -9,7 +9,8 @@ A complete, modern, and minimalist redesign of the personal website pierg.com, b
 * **Static Site Generator:** [Eleventy (11ty)](https://www.11ty.dev/)
 * **Template Language:** [Nunjucks](https://mozilla.github.io/nunjucks/)
 * **Styling:** Plain CSS with Flexbox
-* **CMS:** [Decap CMS](https://decapcms.org/)
+* **CMS:** Ho provato con [Decap CMS](https://decapcms.org/) ma ho fallito per numerosi problemi di permission che non ho risolto
+* **CMS:** [TinaCMS](https://tina.io/) (Self-hosted for local editing)
 * **Forms:** [Formspree](https://formspree.io/)
 * **Hosting & Deployment:** [GitHub Pages](https://pages.github.com/) via [GitHub Actions](https://github.com/features/actions)
 
@@ -36,6 +37,11 @@ To trigger a new deployment, simply commit your changes and push them to the `ma
 
     The site will be available at `http://localhost:8080`.
 
-### CMS Access
+### How to Edit Content
 
-The content management interface is available at `https://pierg.com/admin/`. Access requires authentication via GitHub.
+Content editing is managed locally via TinaCMS. To start the editing interface:
+
+1. Run the local development server: `npm start`
+2. Open your browser and go to `http://localhost:8080/admin/`
+
+This will open the TinaCMS interface, which allows you to edit blog posts and other content. Changes are saved directly to the local files and can then be committed and pushed to the repository.

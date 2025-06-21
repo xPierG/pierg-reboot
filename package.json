@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve"
+    "start": "tinacms dev -c \"eleventy --serve\""
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,8 @@
   "homepage": "https://github.com/xPierG/pierg-reboot#readme",
   "description": "",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.1"
+    "@11ty/eleventy": "^3.1.1",
+    "@tinacms/cli": "^1.9.8",
+    "tinacms": "^2.1.1"
   }
 }
