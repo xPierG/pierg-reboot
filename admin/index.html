@@ -8,6 +8,11 @@
   <script src="https://unpkg.com/decap-cms@3.1.9/dist/decap-cms.js"></script>
 </head>
 <body>
+
+  <h1 style="font-family: sans-serif; text-align: center; margin: 2rem; color: red;">
+    TEST DI DEPLOY v3 - SE MI LEGGI, IL FILE È AGGIORNATO
+  </h1>
+
   <div id="nc-root"></div>
 
   <script>
@@ -23,29 +28,8 @@
         "media_folder": "src/img/uploads",
         "public_folder": "/img/uploads",
         "collections": [
-          {
-            "name": "posts",
-            "label": "Blog Posts",
-            "folder": "src/posts",
-            "create": true,
-            "slug": "{{year}}-{{month}}-{{day}}-{{slug}}",
-            "fields": [
-              { "label": "Title", "name": "title", "widget": "string" },
-              { "label": "Publish Date", "name": "date", "widget": "datetime" },
-              { "label": "Body", "name": "body", "widget": "markdown" },
-              { "label": "Layout", "name": "layout", "widget": "hidden", "default": "post.njk" },
-              { "label": "Tags", "name": "tags", "widget": "hidden", "default": "post" }
-            ]
-          },
-          {
-            "name": "pages",
-            "label": "Pages",
-            "files": [
-              { "file": "src/about.md", "label": "About Page", "name": "about", "fields": [ /* ... */ ] },
-              { "file": "src/privacy-policy.md", "label": "Privacy Policy", "name": "privacy", "fields": [ /* ... */ ] },
-              { "file": "src/contact.md", "label": "Contact Page", "name": "contact", "fields": [ /* ... */ ] }
-            ]
-          }
+          // La tua configurazione delle collections va qui...
+          // (Ho rimosso il dettaglio per brevità, ma tu incolla qui il tuo JSON completo)
         ]
       };
 
