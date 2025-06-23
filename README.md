@@ -9,7 +9,6 @@ A complete, modern, and minimalist redesign of the personal website pierg.com, b
 * **Static Site Generator:** [Eleventy (11ty)](https://www.11ty.dev/)
 * **Template Language:** [Nunjucks](https://mozilla.github.io/nunjucks/)
 * **Styling:** Plain CSS with Flexbox
-* **CMS:** [Decap CMS](https://decapcms.org/)
 * **Forms:** [Formspree](https://formspree.io/)
 * **Hosting & Deployment:** [GitHub Pages](https://pages.github.com/) via [GitHub Actions](https://github.com/features/actions)
 
@@ -35,7 +34,3 @@ To trigger a new deployment, simply commit your changes and push them to the `ma
         npm start
 
     The site will be available at `http://localhost:8080`.
-
-### CMS Access
-
-The content management interface is available at `https://pierg.com/admin/`. Access requires authentication via GitHub.
