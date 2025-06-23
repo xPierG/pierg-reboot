@@ -34,3 +34,7 @@ To trigger a new deployment, simply commit your changes and push them to the `ma
         npm start
 
     The site will be available at `http://localhost:8080`.
+
+## Disclaimer
+
+By now the BLOG session is not visible
