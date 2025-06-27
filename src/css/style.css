@@ -79,6 +79,11 @@ main {
     align-items: center;
 }
 
+/* Rende il testo in grassetto più evidente usando il font-weight corretto */
+strong {
+    font-weight: 600;
+}
+
 /* --- Stili per le Pagine di Testo (About, Blog, etc.) --- */
 .layout-post main, .layout-default main {
     display: block;
@@ -95,7 +100,7 @@ main {
 
 /* ==========================================================================
    Stili Specifici V-Card Homepage
-   ========================================================================== */
+   ========================================================================== 
 
 .v-card {
     display: flex;
@@ -109,7 +114,7 @@ main {
     height: 120px;
     border-radius: 16px;
     object-fit: cover;
-    margin-bottom: 1.5rem; /* Spazio tra foto e nome */
+    margin-bottom: 1.5rem; 
 }
 
 .v-card h1 {
@@ -118,27 +123,27 @@ main {
     margin: 0;
 }
 
-/* Stile per il tagline */
 .v-card p {
-    font-size: 1rem;
     color: #666;
-    margin-top: 0.75rem; /* Spazio tra nome e tagline */
+    margin-top: 0.75rem; 
+    font-size: 1rem;
     margin-bottom: 0;
-    line-height: 1.25; /* <-- MOLTO RIDOTTO, per avvicinare le righe */
+    line-height: 1.25; 
 }
 
 .v-card p strong {
   display: block;
   font-size: 1.2rem;
-  font-weight: 600; /* Usiamo il peso semi-bold che hai scelto */
+  font-weight: 600; 
   color: #333;
 }
+  */
 
 /* Stile per le icone social */
 .social-icons {
     display: flex;
-    gap: 1.25rem; /* Spazio controllato solo TRA le icone */
-    margin-top: 1.75rem; /* <-- AUMENTATO, per dare più spazio SOTTO il tagline */
+    gap: 1.25rem; 
+    margin-top: 1.75rem;
 }
 
 .social-icons a {
@@ -156,7 +161,7 @@ main {
     height: 24px;
     vertical-align: middle;
 }
-
+ 
 /* Stile per il credito della foto nel footer */
 .photo-credit-footer a {
     color: #666; /* Un grigio un po' più scuro del testo normale del footer */
@@ -319,4 +324,157 @@ form button:disabled {
     background-color: #ccc; /* Un grigio chiaro per indicare che è disabilitato */
     color: #666; /* Testo più scuro per contrasto sul grigio chiaro */
     cursor: not-allowed; /* Cambia il cursore per indicare che non è cliccabile */
+}
+
+/* ==========================================================================
+   Stili Homepage - Versione Definitiva e Corretta
+   ========================================================================== */
+
+/* 1. Neutralizziamo il conflitto con il tag <main> SOLO per la homepage */
+body.layout-v-card main {
+    display: block; /* Annulla 'display: flex' */
+    /* Resettiamo le altre proprietà flex per sicurezza */
+    justify-content: initial;
+    align-items: initial;
+}
+
+/* 2. Creiamo e configuriamo il nostro contenitore Grid */
+.split-container {
+    display: grid;
+    /* Due colonne di larghezza uguale e 1 riga */
+    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-rows: 1fr;
+    /* Spazio tra le colonne */
+    gap: 3rem;
+    /* Allinea il contenuto di entrambe le colonne al centro dell'asse verticale */
+    align-items: center;
+    
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+/* Creazione della linea verticale nel gap */
+.image-content::before {
+    content: '';
+    position: absolute;
+    top: 10%; /* Inizia al 20% dell'altezza */
+    height: 80%; /* Alta il 60% del contenitore */
+    
+    /* POSIZIONAMENTO CORRETTO:
+       La sposta a sinistra, al centro del 'gap' da 3rem */
+    left: -1.5rem; 
+
+    width: 1px;
+    background-color: #cccccc; /* Grigio più scuro */
+}
+
+/* 3. Assegniamo esplicitamente ogni elemento alla sua cella nella griglia */
+.text-content {
+    grid-column: 1;      /* Metti questo nella Colonna 1 */
+    grid-row: 1;         /* Metti questo sulla Riga 1 */
+    text-align: right;   /* Allinea il suo contenuto a destra */
+}
+
+.image-content {
+    grid-column: 2;      /* Metti questo nella Colonna 2 */
+    grid-row: 1;         /* Metti questo sulla Riga 1 */
+    text-align: left;    /* Allinea il suo contenuto a sinistra */
+    position: relative;
+}
+
+/* 4. Stili per i contenuti interni (Aggiornati allo stile v-card) */
+.text-content h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.5rem; /* <-- Modificato da 4rem */
+    margin: 0 0 1rem 0;
+}
+
+.text-content p {
+    font-size: 1rem;   /* <-- Modificato da 1.2rem */
+    color: #666;
+    line-height: 1.25; /* <-- Modificato da 1.4 */
+    margin-bottom: 2rem;
+}
+
+/* Aggiunta della regola specifica per il testo in grassetto */
+.text-content p strong {
+    display: block;      /* Mette il testo su una nuova riga */
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.text-content .social-icons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: flex-end; 
+}
+
+.image-content .profile-picture {
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+/* 4. Stili per i contenuti interni 
+.text-content h1 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 4rem;
+    margin: 0 0 1rem 0;
+}
+.text-content p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+.text-content .social-icons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: flex-end; 
+}
+.image-content .profile-picture {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    display: inline-block;
+}
+*/
+
+/* 5. Media Query per la Responsività */
+@media (max-width: 768px) {
+    .split-container {
+        grid-template-columns: 1fr; /* Una sola colonna su mobile */
+        height: auto;
+        text-align: center;
+        gap: 1rem; 
+    }
+
+    .image-content::before {
+        display: none;
+    }
+    
+    .text-content, .image-content {
+        grid-column: 1; /* Entrambi nella prima e unica colonna */
+        grid-row: auto; /* Lasciamo che si impilino automaticamente */
+        text-align: center;
+    }
+
+    .image-content {
+        margin-bottom: 2rem;
+    }
+
+    .text-content .social-icons {
+        justify-content: center; /* Centra le icone su mobile */
+    }
 }
