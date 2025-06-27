@@ -3,12 +3,12 @@ title: "About"
 layout: "default"
 ---
 
-At my core, I am a software developer. I lead innovation, AI and digital transformation initiatives, building my career at the intersection of strategy, technology, and agile execution.
+Deep down, I'm a software engineer. This shapes how I lead innovation, AI, and digital transformation: my work is about turning strategy into results... one at a time, bridging the gap between a great idea and working tech through agile, hands-on execution.
 
-My work is about driving change. I currently serve as Chief Innovation and Data Officer at Credem Bank, following an exciting role as Chief Information and Digital Transformation Officer at Ducati and a long experience with Ferrari F1. My journey also includes significant experience in tech consulting with Iconsulting and in sw development with Elsag, a former Finmeccaninca Company.
+My career has been a bit of a wild ride, from the pit lanes of Ferrari F1 to the roaring engines at Ducati. Today, as Chief Innovation and Data Officer at Credem Bank, I'm bringing that same speed and innovation mindset to finance. My journey started by cutting my teeth in tech consulting and slinging code at Elsag, a former Finmeccanica company.
 
-My approach is hands-on, rooted in a deep technical background and focused on applying emerging technologies like AI and agile practices to solve real-world business problems.
+My approach is hands-on. I'm less interested in buzzwords and more focused on applying emerging tech like AI and agile methods to build things that actually work.
 
-Beyond my corporate roles, I am deeply involved in the innovation ecosystem. I'm a co-founder of ImpactHub Reggio Emilia and have been involved with several tech startups. I frequently speak at conferences and lecture at universities, sharing insights on AI, digital strategy, and agile methodologies.
+When I'm not at the bank, I'm still building. I co-founded ImpactHub Reggio Emilia and love jumping into the trenches with tech startups. You'll also find me on conference stages or in university halls, talking (probably too much) about AI, digital strategy, and agile.
 
-My goal is simple: to continuously challenge the status quo and build what's next.
+My goal is simple: challenge the status quo and build what's next.
