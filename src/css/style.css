@@ -212,28 +212,28 @@ form button:disabled {
     cursor: not-allowed; /* Cambia il cursore per indicare che non è cliccabile */
 }
 
+
 .post-header {
-    margin-bottom: 1.5rem; /* Ridotto per fare spazio alla data che ora è esterna */
+    /* Questa è la riga chiave: annulla il flex e forza gli elementi a impilarsi */
+    display: block; 
+    margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #eee;
 }
 
-/* Modificato per aumentare la specificità e aggiungere font-family */
-.post-header .post-title {
-    font-family: var(--font-titoli); /* Usa JetBrains Mono per i titoli dei post */
-    color: #111; /* Titolo nero, non blu, per distinguerlo dai link */
-    font-size: 2.4rem; /* Ridotto, leggermente più grande del titolo H1 di default */
-    margin-left: 0; /* Assicura l'allineamento a sinistra con il contenuto */
-    margin-bottom: 0.5rem;
-    line-height: 1.2; /* Già presente, corretto */
+.post-title {
+    font-family: var(--font-titoli);
+    font-size: 2.4rem;
+    color: #111;
+    margin-bottom: 0.5rem; 
+    line-height: 1;
 }
 
 .post-date {
-    display: block; /* Assicura che la data occupi la sua riga */
+    display: block; /* Questa regola assicura che la data stia sulla sua riga */
     font-size: 0.9rem;
     color: #888;
-    margin-top: 0; /* La spaziatura sopra è gestita dal margin-bottom dell'header */
-    margin-bottom: 1.5rem; /* Spazio tra la data e il contenuto del post */
+    margin-bottom: 1.5rem;
 }
 
 .post-content {
@@ -490,7 +490,7 @@ body.layout-v-card main {
 .container-wide {
   max-width: 960px;
   margin: 2rem auto;
-  padding: 0 2rem;
+  padding: 0; /* old: 0 2rem; */
 }
 
 
@@ -583,9 +583,81 @@ body.layout-v-card main {
     aspect-ratio: 16 / 10;
 }
 
+.post-featured-image {
+    display: block; /* Necessario per poter usare margin: auto */
+    max-width: 720px; /* Imposta una larghezza massima, puoi cambiarla a piacere */
+    width: 100%; /* Occupa al massimo tutta la larghezza disponibile */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto 2rem auto; /* Centra l'immagine orizzontalmente e aggiunge spazio sotto */
+}
+
 .placeholder-initials {
     font-family: var(--font-titoli); /* Usa JetBrains Mono */
     font-size: 2.5rem;               /* Dimensione grande */
     color: #cccccc;                  /* Colore grigio chiaro */
     font-weight: 400;
+}
+
+/* ==========================================================================
+   Stili Blocco Autore a fine post
+   ========================================================================== */
+.author-block {
+    display: flex;
+    align-items: flex-start; /* Allinea l'immagine in alto rispetto al testo */
+    gap: 1.5rem; /* Spazio tra immagine e testo */
+    margin-top: 4rem; /* Spazio sopra il blocco */
+    padding-top: 2rem; /* Spazio interno sopra */
+    border-top: 1px solid #eee; /* Linea di separazione */
+}
+
+.author-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Rende l'immagine circolare */
+    object-fit: cover;
+}
+
+.author-info {
+    flex: 1; /* Occupa lo spazio rimanente */
+}
+
+.author-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.author-name {
+    font-family: var(--font-titoli);
+    font-size: 1.5rem;
+    margin: 0.25rem 0 0.5rem 0;
+}
+
+.author-bio {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.5;
+}
+
+/* Stili per il bottone LinkedIn all'interno del nuovo blocco */
+.author-linkedin .linkedin-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.author-linkedin .linkedin-button:hover {
+    background-color: #005582;
 }

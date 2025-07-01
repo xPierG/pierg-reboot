@@ -2,8 +2,17 @@
 module.exports = function(eleventyConfig) {
   
   const { DateTime } = require("luxon");
+  
   eleventyConfig.addFilter("date", (dateObj, format) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(format);
+  });
+
+  eleventyConfig.addFilter("readableDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLLL yyyy");
+  });
+
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
 
   // Passthrough Copy: Copia le cartelle nella build finale (_site).
