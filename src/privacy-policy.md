@@ -9,7 +9,7 @@ This Privacy Policy describes how your personal information is handled when you 
 
 ### 1. Data Controller
 
-The data controller for this website is **[Il tuo Nome Completo]**, who can be contacted at **[La tua email per questioni di privacy]**.
+The data controller for this website is Piergiorgio Grossi, who can be contacted at info at pierg dot com.
 
 ### 2. Personal Data We Collect
 

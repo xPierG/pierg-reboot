@@ -1,0 +1,39 @@
+---
+title: "Blog"
+layout: "blog-index.njk"
+---
+
+<div class="post-list-rich">
+{%- for post in collections.post | reverse -%}
+  <article class="post-preview">
+    
+    <!-- Colonna Sinistra: Immagine -->
+    <a href="{{ post.url | url }}" class="post-preview-image-link">
+      {% if post.data.featured_image %}
+        <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" class="post-preview-image">
+      {% else %}
+        {# Blocco per quando l'immagine non c'è, con le iniziali fisse "PG" #}
+        <div class="post-preview-image-placeholder">
+          <span class="placeholder-initials">
+            PG
+          </span>
+        </div>
+      {% endif %}
+    </a>
+
+    <!-- Colonna Destra: Testo -->
+    <div class="post-preview-content">
+      <h2 class="post-preview-title">
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+      </h2>
+      <time class="post-preview-date" datetime="{{ post.date | date('yyyy-MM-dd') }}">
+        {{ post.date | date('dd LLLL yyyy') }}
+      </time>
+      {% if post.data.excerpt %}
+        <p class="post-preview-excerpt">{{ post.data.excerpt }}</p>
+      {% endif %}
+    </div>
+
+  </article>
+{%- endfor -%}
+</div>
