@@ -93,9 +93,11 @@ strong {
     line-height: 1.6;
 }
 
-.layout-default h1, .layout-post h1 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
+.layout-default .page-title, 
+.layout-post .page-title {
+    font-size: 2.4rem;
+    font-family: var(--font-titoli);
+    margin-bottom: 0.25rem; /* <- Il margine corretto, ora verrà applicato */
 }
 
 /* ==========================================================================
@@ -213,27 +215,15 @@ form button:disabled {
 }
 
 
-.post-header {
-    /* Questa è la riga chiave: annulla il flex e forza gli elementi a impilarsi */
-    display: block; 
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
-}
+/* ==========================================================================
+   Stili per Intestazione di Pagina Unificata
+   ========================================================================== */
 
-.post-title {
-    font-family: var(--font-titoli);
-    font-size: 2.4rem;
-    color: #111;
-    margin-bottom: 0.5rem; 
-    line-height: 1;
-}
-
-.post-date {
-    display: block; /* Questa regola assicura che la data stia sulla sua riga */
+.page-date {
+    display: block;
     font-size: 0.9rem;
     color: #888;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem; /* Ridotto per avvicinare il contenuto alla data */
 }
 
 .post-content {
@@ -590,7 +580,7 @@ body.layout-v-card main {
     height: auto;
     object-fit: cover;
     border-radius: 8px;
-    margin: 0 auto 2rem auto; /* Centra l'immagine orizzontalmente e aggiunge spazio sotto */
+    margin: 0 auto 1.5rem auto; /* Centra l'immagine orizzontalmente e aggiunge spazio sotto */
 }
 
 .placeholder-initials {

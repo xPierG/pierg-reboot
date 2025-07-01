@@ -2,8 +2,12 @@
 layout: "layout.njk"
 bodyClass: layout-default
 ---
-{% if not hide_page_title %}
-  <h1>{{ title }}</h1>
+
+<h1 class="page-title">{{ title }}</h1>
+
+{# CONDIZIONE DEFINITIVA: Controlla se 'tags' esiste E se include 'post' #}
+{% if tags and 'post' in tags %}
+    <time class="page-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 {% endif %}
 
 {{ content | safe }}
