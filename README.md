@@ -12,27 +12,30 @@ A complete, modern, and minimalist redesign of the personal website pierg.com, b
 * **Forms:** [Formspree](https://formspree.io/)
 * **Hosting & Deployment:** [GitHub Pages](https://pages.github.com/) via [GitHub Actions](https://github.com/features/actions)
 
-### Deployment
+### Adding a New Post (Manual Workflow)
 
-This site is automatically deployed to `pierg.com` on every push to the `master` branch. The deployment process is handled by the GitHub Action defined in `.github/workflows/deploy.yml`.
+This workflow describes how to create a new blog post from a LinkedIn post.
 
-To trigger a new deployment, commit your changes and push them to the `master` branch:
-
-```bash
-git add .
-git commit -m "Your descriptive commit message"
-git push origin master
-```
+1.  **Create the image folder:** Make sure the `src/img/blog/` directory exists.
+2.  **Use the template:** Duplicate the file `src/posts/_template.md` and rename it using the format `YYYY-MM-DD-your-post-title.md`.
+3.  **Fill the front matter:**
+    * `title`: The title of the post.
+    * `date`: The publication date.
+    * `featured_image`: The path to the image (e.g., `/img/blog/your-image.jpg`).
+    * `excerpt`: A short summary for the post preview.
+    * `linkedin_url`: The full URL of the original LinkedIn post.
+4.  **Add the content:** Paste the text of your post below the `---` front matter section.
+5.  **Publish:** Commit and push the changes to the `master` branch.
 
 ### How to Run Locally
 
 1.  Clone the repository.
 2.  Install dependencies:
-
+    ```bash
     npm install
-
+    ```
 3.  Start the local development server:
-
+    ```bash
     npm start
-
-The site will be available at `http://localhost:8080`.
+    ```
+    The site will be available at `http://localhost:8080`.
