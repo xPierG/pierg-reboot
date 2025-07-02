@@ -1,5 +1,5 @@
 ---
-title: "Scrviere è pensare"
+title: "Scrivere è pensare"
 date: "2025-05-30"
 layout: "post.njk"
 tags: post

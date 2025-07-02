@@ -5,7 +5,7 @@ layout: "post.njk"
 tags: post
 featured_image: "/img/blog/1751359044651.jpeg"
 excerpt: "Il prompt engineering è morto, lunga vita al context engineering"
-linkedin_url: "https://www.linkedin.com/posts/pierg_mi-sono-appena-reso-conto-di-una-cosa-che-activity-7327573279928373248-qkaN"
+linkedin_url: "https://www.linkedin.com/posts/pierg_ai-promptengineering-contextengineering-activity-7346062669428228096-N68H"
 ---
 
 Il prompt engineering è morto, lunga vita al context engineering. 
