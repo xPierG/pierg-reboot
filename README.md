@@ -38,4 +38,13 @@ This workflow describes how to create a new blog post from a LinkedIn post.
     ```bash
     npm start
     ```
-    The site will be available at `http://localhost:8080`.
+    The site will be available at `http://localhost:8080`
+
+### Deployment
+
+This site is automatically deployed on every push to the `master` branch.
+
+To publish all your changes (new posts, etc.), run the following command from your terminal:
+
+```bash
+npm run publish
