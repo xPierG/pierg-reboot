@@ -4,7 +4,7 @@ date: "2025-07-03"
 layout: "post.njk"
 tags: post
 featured_image: "/img/blog/1750955342519.jpeg"
-excerpt: "Da bambini passavamo le ore a sgranare gli occhi per riconoscere animali o draghi nelle nuvole. Oggi pare che molti adulti facciano la stessa cosa con l'AI: solo che il drago è pensare che l'AI Generativa sia in qualche modo cosciente."
+excerpt: "Da bambini passavamo le ore a sgranare gli occhi per riconoscere animali o draghi nelle nuvole..."
 linkedin_url: "https://www.linkedin.com/posts/pierg_ai-intelligenzaartificiale-innovazione-activity-7346425066366152706-v08d"
 ---
 

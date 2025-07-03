@@ -1,10 +1,21 @@
 ---
 title: "Blog"
-layout: "blog-index.njk"
+layout: "default.njk"
+pagination:
+  data: collections.post
+  size: 10
+  alias: posts
+  reverse: true
 ---
 
+<p>
+    Here's a small selection of posts I usually write on 
+    <a href="https://www.linkedin.com/in/pierg" target="_blank" rel="noopener noreferrer">LinkedIn</a>, 
+    but that I also like to keep here. It's not always up-to-date: deal with it.
+</p>
+
 <div class="post-list-rich">
-{%- for post in collections.post | reverse -%}
+{%- for post in posts -%}
   <article class="post-preview">
     
     <!-- Colonna Sinistra: Immagine -->
@@ -37,3 +48,17 @@ layout: "blog-index.njk"
   </article>
 {%- endfor -%}
 </div>
+
+{% if pagination.pages.length > 1 %}
+<nav class="pagination-nav">
+  <p>Pagina {{ pagination.pageNumber + 1 }} di {{ pagination.pages.length }}</p>
+  <div class="pagination-links">
+    {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}" class="pagination-link">← Pagina Precedente</a>
+    {% endif %}
+    {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}" class="pagination-link">Pagina Successiva →</a>
+    {% endif %}
+  </div>
+</nav>
+{% endif %}
