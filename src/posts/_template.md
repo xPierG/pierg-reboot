@@ -3,7 +3,7 @@ title: "INSERISCI QUI IL TITOLO DEL POST"
 date: "YYYY-MM-DD"
 layout: "post.njk"
 tags: post
-featured_image: "/img/blog/NOME-IMMAGINE.jpg"
+featured_image: "/img/blog/NOME-IMMAGINE.jpeg"
 excerpt: "Inserisci qui una breve descrizione o l'inizio del post, che apparirà nella lista del blog."
 linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:..."
 ---
